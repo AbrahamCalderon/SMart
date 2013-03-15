@@ -1,0 +1,711 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">		
+		<title>Data visualisation demo</title>
+		
+		<style>
+			body
+			{
+				background-color: #333;
+				font-family: sans-serif;
+				color: #fff;
+				font-size: 10px;
+			}
+			.wardtype-5
+			{
+				fill: #4C4A12;
+				color: #4C4A12;
+			}
+			.wardtype-2
+			{
+				fill: #989415;
+				color: #989415;
+			}
+			.wardtype-3
+			{
+				fill: #1E4559;
+				color: #1E4559;
+			}
+			.wardtype-4
+			{
+				fill: #7F7274;
+				color: #7F7274;
+			}
+			.wardtype-1
+			{
+				fill: #981C30;
+				color: #981C30;
+			}
+			.wardtype-6
+			{
+				fill: #fff;
+				color: #fff;
+			}
+			.wardtype-7
+			{
+				fill: #4B0612;
+				color: #4B0612;
+			}
+			.wardtype-8
+			{
+				fill: #1EAAE4;
+				color: #1EAAE4;
+			}
+			.wardtype-9
+			{
+				fill: #AD5E71;
+				color: #AD5E71;
+			}
+			.wardtype-10
+			{
+				fill: #000;
+				color: #000;
+			}
+			.wardtype-11
+			{
+				fill: #00bfff;
+				color: #00bfff;
+			}
+			.wardtype-12
+			{
+				fill: #ffdab9;
+				color: #ffdab9;
+			}
+			.wardtype-13
+			{
+				fill: #66cdaa;
+				color: #66cdaa;
+			}
+			.wardtype-14
+			{
+				fill: #98fb98;
+				color: #98fb98;
+			}
+			.wardtype-15
+			{
+				fill: #ffd700;
+				color: #ffd700;
+			}
+			.wardtype-16
+			{
+				fill: #f4a460;
+				color: #f4a460;
+			}
+			.wardtype-17
+			{
+				fill: #ffa500;
+				color: #ffa500;
+			}
+			.wardtype-18
+			{
+				fill: #ff1493;
+				color: #ff1493;
+			}
+			.wardtype-19
+			{
+				fill: #556b2f;
+				color: #556b2f;
+			}
+			.wardtype-20
+			{
+				fill: #daa520;
+				color: #daa520;
+			}
+			.wardtype-21
+			{
+				fill: #f0e68c;
+				color: #f0e68c;
+			}
+			.wardtype-22
+			{
+				fill: #bc8f8f;
+				color: #bc8f8f;
+			}
+			.wardtype-23
+			{
+				fill: #ff6347;
+				color: #ff6347;
+			}
+			.wardtype-24
+			{
+				fill: #ee82ee;
+				color: #ee82ee;
+			}
+			.wardtype-25
+			{
+				fill: #f0fff0;
+				color: #f0fff0;
+			}
+			.wardtype-26
+			{
+				fill: #4682b4;
+				color: #4682b4;
+			}
+			.wardtype-27
+			{
+				fill: #bdb76b;
+				color: #bdb76b;
+			}
+			.wardtype-28
+			{
+				fill: #ff4500;
+				color: #ff4500;
+			}
+			.wardtype-29
+			{
+				fill: #dda0dd;
+				color: #dda0dd;
+			}
+			.wardtype-30
+			{
+				fill: #778899;
+				color: #778899;
+			}
+			.wardtype-31
+			{
+				fill: #b22222;
+				color: #b22222;
+			}
+			.wardtype-32
+			{
+				fill: #a020f0;
+				color: #a020f0;
+			}
+			.wardtype-33
+			{
+				fill: #f5f5dc;
+				color: #f5f5dc;
+			}
+			.wardtype-34
+			{
+				fill: #32cd32;
+				color: #32cd32;
+			}
+			.wardtype-35
+			{
+				fill: #b0c4de;
+				color: #b0c4de;
+			}
+			.wardtype-36
+			{
+				fill: #ff9933;
+				color: #ff9933;
+			}
+			.wardtype-37
+			{
+				fill: #ffff33;
+				color: #ffff33;
+			}
+			.wardtype-38
+			{
+				fill: #00ff00;
+				color: #00ff00;
+			}
+			.wardtype-39
+			{
+				fill: #0099cc;
+				color: #0099cc;
+			}
+			.wardtype-40
+			{
+				fill: #ff0033;
+				color: #ff0033;
+			}
+			.wardtype-41
+			{
+				fill: #ffcc00;
+				color: #ffcc00;
+			}
+			.wardtype-42
+			{
+				fill: #cccccc;
+				color: #cccccc;
+			}
+			.wardtype-43
+			{
+				fill: #cc33cc;
+				color: #cc33cc;
+			}
+			.wardtype-44
+			{
+				fill: #9999ff;
+				color: #9999ff;
+			}
+			.wardtype-45
+			{
+				fill: #996600;
+				color: #996600;
+			}
+			.wardtype-46
+			{
+				fill: #003300;
+				color: #003300;
+			}
+			.wardtype-47
+			{
+				fill: #330033;
+				color: #330033;
+			}
+			.wardtype-48
+			{
+				fill: #ccff66;
+				color: #ccff66;
+			}
+			.wardtype-49
+			{
+				fill: #ffccff;
+				color: #ffccff;
+			}
+			.wardtype-50
+			{
+				fill: #0000cc;
+				color: #0000cc;
+			}			
+			ul
+			{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			div
+			{
+				float: left;
+				width: 200px;
+
+			}
+			.axis text
+			{
+				fill: #fff;
+			}
+			.axis .domain
+			{
+				opacity: 0;
+			}
+			.tick
+			{
+				stroke: #fff;
+			}
+			
+			#container {
+				position:absolute;
+				left:570px;
+				top:645px;
+				width: 200px;
+				padding: 10px;
+				background-color: #333;
+			}
+			
+			.columns {
+				position:absolute;
+				left:0px;
+				top:20px;
+				background: #333;
+				padding: 10px;
+				margin: 20px;
+				margin-right: auto;
+				margin-left: auto;
+				
+			}
+
+			.columns {
+				-moz-column-count: 10; /*for mozilla-based browsers like Firefox*/
+				-webkit-column-count: 10; /*for webkit-based browsers like Safari or Chrome*/
+				column-count: 10; /*for any browsers that support the multi-column rule officially without resorting to prefixes like -moz- or -webkit-*/
+			}
+			
+			#ds{
+				position:absolute;
+				left: 880px;
+				top: 655px;
+			}
+		</style>
+
+<script type="text/javascript">
+
+  var WIDTH = 800, // width of the graph
+	HEIGHT = 550, // height of the graph
+	MARGINS = {top: 20, right: 20, bottom: 20, left: 60}, // margins around the graph
+	
+	xRange = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]), // x range function
+	
+	yRange = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]), // y range function
+	rRange = d3.scale.linear().range([5, 20]), // radius range function - ensures the radius is between 5 and 20
+	
+	colors = [	// array of colors for the data points. Each ward will have a differnet color
+		"#981C30",
+		"#989415",
+		"#1E4559",
+		"#7F7274",
+		"#4C4A12",
+		"#ffffff",
+		"#4B0612",
+		"#1EAAE4",
+		"#AD5E71",
+		"#000000",
+		"#00bfff",
+		"#ffdab9",
+		"#66cdaa",
+		"#98fb98",
+		"#ffd700",
+		"#f4a460",
+		"#ffa500",
+		"#ff1493",
+		"#556b2f",
+		"#daa520",
+		"#f0e68c",
+		"#bc8f8f",
+		"#ff6347",
+		"#ee82ee",
+		"#f0fff0",
+		"#4682b4",
+		"#bdb76b",
+		"#ff4500",
+		"#dda0dd",
+		"#778899",
+		"#b22222",
+		"#a020f0",
+		"#f5f5dc",
+		"#32cd32",
+		"#b0c4de",
+		"#ff9933",
+		"#ffff33",
+		"#00ff00",
+		"#0099cc",
+		"#ff0033",
+		"#ffcc00",
+		"#cccccc",
+		"#cc33cc",
+		"#9999ff",
+		"#996600",
+		"#003300",
+		"#330033",
+		"#ccff66",
+		"#ffccff",
+		"#0000cc"
+	],
+	currentDataset, // name of the current data set. Used to track when the dataset changes
+	
+	rawData, // the raw data from the CSV file
+	
+	drawingData, // data with the wards we don't want to display (dirty or it's "type" is unchecked)
+	
+	xAxis = d3.svg.axis().scale(xRange).tickSize(16).tickSubdivide(true), // x axis function
+	
+	yAxis = d3.svg.axis().scale(yRange).tickSize(10).orient("right").tickSubdivide(true), // y axis function
+	
+	vis; // visualisation selection
+	
+	
+// runs once when the visualisation loads
+function init () {
+	vis = d3.select("#visualisation");
+	
+	// add in the x axis
+	vis.append("svg:g") // container element
+		.attr("class", "x axis") // so we can style it with CSS
+		.attr("transform", "translate(0," + HEIGHT + ")") // move into position
+		.call(xAxis); // add to the visualisation
+		
+	// add in the y axis
+	vis.append("svg:g") // container element
+		.attr("class", "y axis") // so we can style it with CSS
+		.call(yAxis); // add to the visualisation
+		
+	// load data, process it and draw it
+	update ();
+}
+
+
+// this redraws the graph based on the data in the drawingData variable
+function redraw () {
+	var wards = vis.selectAll ("circle").data(drawingData, function (d) { return d.id;}), // select the data points and set their data
+		axes = getAxes (); // object containing the axes we'd like to use (duration, inversions, etc.)
+		
+	// add new points if they're needed
+	wards.enter()
+		.insert("svg:circle")
+			.attr("cx", function (d) { return xRange (d[axes.xAxis]); })
+			.attr("cy", function (d) { return yRange (d[axes.yAxis]); })
+			.style("opacity", 0)
+			.style("fill", function (d) { return colors[d.ward.id]; }); // set fill color from the colors array
+			
+	// the data domains or desired axes might have changed, so update them all
+	xRange.domain([
+		d3.min(drawingData, function (d) { return +d[axes.xAxis]; }),
+		d3.max(drawingData, function (d) { return +d[axes.xAxis]; })
+	]);
+	yRange.domain([
+		d3.min(drawingData, function (d) { return +d[axes.yAxis]; }),
+		d3.max(drawingData, function (d) { return +d[axes.yAxis]; })
+	]);
+	rRange.domain([
+		d3.min(drawingData, function (d) { return +d[axes.radiusAxis]; }),
+		d3.max(drawingData, function (d) { return +d[axes.radiusAxis]; })
+	]);
+	
+	// transition function for the axes
+    var t = vis.transition().duration(1500).ease("exp-in-out");
+    t.select(".x.axis").call(xAxis);
+    t.select(".y.axis").call(yAxis);
+	
+	// transition the points
+	wards.transition().duration(1500).ease("exp-in-out")
+		.style("opacity", 1)
+		.style("fill", function (d) { return colors[d.ward.id]; }) // set fill color from the colors array
+		
+		.attr("r", function(d) { return rRange (d[axes.radiusAxis]); })
+		.attr("cx", function (d) { return xRange (d[axes.xAxis]); })
+		.attr("cy", function (d) { return yRange (d[axes.yAxis]); });
+		
+	// remove points if we don't need them anymore
+	wards.exit()
+		.transition().duration(1500).ease("exp-in-out")
+		.attr("cx", function (d) { return xRange (d[axes.xAxis]); })
+		.attr("cy", function (d) { return yRange (d[axes.yAxis]); })
+			.style("opacity", 0)
+			.attr("r", 0)
+				.remove();
+}
+// let's kick it all off!
+init ();
+
+//////////////////////////////////////////////////////////
+// helper functions
+//////////////////////////////////////////////////////////
+// Update the list of checkboxes which allows the selection of ward types
+function generateWardsList (data) {
+	var i = data.length,
+		wardNames = {},
+		select = document.getElementById("ward-types"),
+		list = "";
+	// loop though each ward and check it's type's name. If we haven't seen
+	// it before, add it to an object so that we can use it to build the list
+	while (i--) {
+		if (typeof wardNames[data[i].ward.name] == "undefined") {
+			wardNames[data[i].ward.name] = data[i].ward.className;
+		}
+	}
+	// loop through the array to generate the list of types
+	for (var key in wardNames) {
+		if (wardNames.hasOwnProperty(key)) {
+			list = '<li class="' + wardNames[key] + '"><label><input type="checkbox" checked="checked" value="' + slugify(key) + '">' + key + '</label></li>' + list;
+		}
+	}
+	// update the form
+	select.innerHTML = list;
+}
+//return the name of the dataset which is currently selected
+function getChosenDataset() {
+	var select = document.getElementById("dataset");
+	return select.options[select.selectedIndex].value;
+}
+// take a string and turn it into a WordPress style slug
+function slugify (string) {
+	return string.replace (/([^a-z0-9])/ig, '-').toLowerCase ();
+}
+
+// return an object containing the currently selected axis choices
+function getAxes () {
+	var x = document.querySelector("#x-axis input:checked").value, //selects the checked radio button within "#x-axis"
+		y = document.querySelector("#y-axis input:checked").value, //selects the checked radio button within "#y-axis"
+		r = document.querySelector("#r-axis input:checked").value; //selects the checked radio button within "#r-axis"
+	return {
+		xAxis: x,
+		yAxis: y,
+		radiusAxis: r
+	};
+}
+// after analysis, dirty data is considered to be that which can't be converted
+// to a number, or where the number is 0 (meaning it is unknown)
+function isDirty (data) {
+	var clean = "ward crimes year".split(" ").every (function (attribute) {
+		return !isNaN (+data[attribute]) && +data[attribute] > 0;
+	});
+	return !clean;
+}
+// return a list of wards which are currently selected
+function plottableWards () {
+	var w = [].map.call (document.querySelectorAll ("#ward-types input:checked"), function (checkbox) { return checkbox.value;} );
+	return w;
+}
+// take a raw dataset and remove wards which shouldn't be displayed
+// (i.e. if it is "dirty" or it's type isn't selected)
+function processData (data) {
+	var processed = [],
+		cullDirty = document.getElementById("cull-dirty").checked,
+		wardTypes = {},
+		counter = 1;
+	data.forEach (function (data, index) {
+		var w,
+			className = "";
+		if (!(cullDirty && isDirty(data))) { // don't process it if it's dirty and we want to cull dirty data
+			w = {
+				id: index // so that the wards can animate
+			};
+			for (var attribute in data) {
+				if (data.hasOwnProperty (attribute)) {
+					w[attribute] = data[attribute]; // populate the ward object
+				}
+			}
+			if (typeof wardTypes[data.ward] == "undefined") { // generate a classname for the ward based on it's type (used for styling)
+				wardTypes[data.ward] = {
+					id: counter - 1,
+					className: 'wardtype-' + counter,
+					name: data.ward,
+					slug: slugify(data.ward)
+				};
+				counter = counter + 1;
+			}
+			w.ward = wardTypes[data.ward];
+			processed.push (w); // add the w to the output
+		}
+	});
+	return processed; // only contains wards we're interested in visualising
+}
+// remove wards whose type is not selected from a dataset
+function cullUnwantedTypes (wards) {
+	var typesToDisplay = plottableWards ();
+	return wards.filter (function (w) {
+		return typesToDisplay.indexOf(w.ward.slug) !== -1;
+	});
+}
+// called every time a form field has changed
+function update () {
+	var dataset = getChosenDataset(), //filename of the chosen dataset csv
+		processedData; // the data while will be visualised
+		
+	//if the dataset has changed from last time, load the new csv file
+	if(dataset != currentDataset) {
+		d3.csv("data/" + dataset + ".csv", function (data) {
+			rawData = data;
+			processedData = processData(rawData);
+			generateWardsList(processedData);
+			drawingData = cullUnwantedTypes(processedData);
+			redraw();
+		})
+	} else {
+		//process data based on form fields and store it in appropraite variables
+		processedData = processData(rawData);
+		drawingData = cullUnwantedTypes(processedData);
+		redraw();
+	}
+	//}
+}
+// listen to the form fields changing
+document.getElementById("cull-dirty").addEventListener ("change", update, false);
+document.getElementById("dataset").addEventListener ("change", update, false);
+document.getElementById("controls").addEventListener ("click", update, false);
+document.getElementById("controls").addEventListener ("keyup", update, false);
+
+</script>
+	</head>
+	<body>
+		<h1>Visualising Chicago Crime Data</h1>
+		<svg id="visualisation" width="800" height="600"></svg>
+
+		<form id="controls">
+			<div>
+				<h2>X axis</h2>
+				<ul id="x-axis">
+					<li><label><input checked="checked" type="radio" name="x-axis" value="year">Year</label></li>
+					<li><label><input type="radio" name="x-axis" value="crimes">Crime Count</label></li>
+				</ul>
+			</div>
+			<div>
+				<h2>Y axis</h2>
+				<ul id="y-axis">
+					<li><label><input checked="checked" type="radio" name="y-axis" value="year">Year</label></li>
+					<li><label><input checked="checked" type="radio" name="y-axis" value="crimes">Crime count</label></li>
+				</ul>
+			</div>
+			<div>
+				<h2>Radius</h2>
+				<ul id="r-axis">
+					<li><label><input checked="checked" type="radio" name="r-axis" value="year">Year</label></li>
+					<li><label><input type="radio" name="r-axis" value="crimes">Crime count</label></li>
+				</ul>
+			</div>
+			
+			<div id = "container">
+			<h2>Wards</h2>
+			<div class = "columns">	
+				<ul id="ward-types">
+					<li><label><input type="checkbox" checked="checked" value="1">Ward 1</label></li>
+					<li><label><input type="checkbox" checked="checked" value="2">Ward 2</label></li>
+					<li><label><input type="checkbox" checked="checked" value="3">Ward 3</label></li>
+					<li><label><input type="checkbox" checked="checked" value="4">Ward 4</label></li>
+					<li><label><input type="checkbox" checked="checked" value="5">Ward 5</label></li>
+					<li><label><input type="checkbox" checked="checked" value="6">Ward 6</label></li>
+					<li><label><input type="checkbox" checked="checked" value="7">Ward 7</label></li>
+					<li><label><input type="checkbox" checked="checked" value="8">Ward 8</label></li>
+					<li><label><input type="checkbox" checked="checked" value="9">Ward 9</label></li>
+					<li><label><input type="checkbox" checked="checked" value="10">Ward 10</label></li>
+					<li><label><input type="checkbox" checked="checked" value="11">Ward 11</label></li>
+					<li><label><input type="checkbox" checked="checked" value="12">Ward 12</label></li>
+					<li><label><input type="checkbox" checked="checked" value="13">Ward 13</label></li>
+					<li><label><input type="checkbox" checked="checked" value="14">Ward 14</label></li>
+					<li><label><input type="checkbox" checked="checked" value="15">Ward 15</label></li>
+					<li><label><input type="checkbox" checked="checked" value="16">Ward 16</label></li>
+					<!--*******************************************************************************-->
+					<li><label><input type="checkbox" checked="checked" value="17">Ward 17</label></li>
+					<li><label><input type="checkbox" checked="checked" value="18">Ward 18</label></li>
+					<li><label><input type="checkbox" checked="checked" value="19">Ward 19</label></li>
+					<li><label><input type="checkbox" checked="checked" value="20">Ward 20</label></li>
+					<li><label><input type="checkbox" checked="checked" value="21">Ward 21</label></li>
+					<li><label><input type="checkbox" checked="checked" value="22">Ward 22</label></li>
+					<li><label><input type="checkbox" checked="checked" value="23">Ward 23</label></li>
+					<li><label><input type="checkbox" checked="checked" value="24">Ward 24</label></li>
+					<!--*******************************************************************************-->
+					<li><label><input type="checkbox" checked="checked" value="25">Ward 25</label></li>
+					<li><label><input type="checkbox" checked="checked" value="26">Ward 26</label></li>
+					<li><label><input type="checkbox" checked="checked" value="27">Ward 27</label></li>
+					<li><label><input type="checkbox" checked="checked" value="28">Ward 28</label></li>
+					<li><label><input type="checkbox" checked="checked" value="29">Ward 29</label></li>
+					<li><label><input type="checkbox" checked="checked" value="30">Ward 30</label></li>
+					<li><label><input type="checkbox" checked="checked" value="31">Ward 31</label></li>
+					<li><label><input type="checkbox" checked="checked" value="32">Ward 32</label></li>
+					<!--*******************************************************************************-->
+					<li><label><input type="checkbox" checked="checked" value="33">Ward 33</label></li>
+					<li><label><input type="checkbox" checked="checked" value="34">Ward 34</label></li>
+					<li><label><input type="checkbox" checked="checked" value="35">Ward 35</label></li>
+					<li><label><input type="checkbox" checked="checked" value="36">Ward 36</label></li>
+					<li><label><input type="checkbox" checked="checked" value="37">Ward 37</label></li>
+					<li><label><input type="checkbox" checked="checked" value="38">Ward 38</label></li>
+					<li><label><input type="checkbox" checked="checked" value="39">Ward 39</label></li>
+					<li><label><input type="checkbox" checked="checked" value="40">Ward 40</label></li>
+					<!--*******************************************************************************-->
+					<li><label><input type="checkbox" checked="checked" value="41">Ward 41</label></li>
+					<li><label><input type="checkbox" checked="checked" value="42">Ward 42</label></li>
+					<li><label><input type="checkbox" checked="checked" value="43">Ward 43</label></li>
+					<li><label><input type="checkbox" checked="checked" value="44">Ward 44</label></li>
+					<li><label><input type="checkbox" checked="checked" value="45">Ward 45</label></li>
+					<li><label><input type="checkbox" checked="checked" value="46">Ward 46</label></li>
+					<li><label><input type="checkbox" checked="checked" value="47">Ward 47</label></li>
+					<li><label><input type="checkbox" checked="checked" value="48">Ward 48</label></li>
+					<li><label><input type="checkbox" checked="checked" value="49">Ward 49</label></li>
+					<li><label><input type="checkbox" checked="checked" value="50">Ward 50</label></li>
+				</ul>
+			</div>
+			</div>
+			<div id="ds">
+				<h2>Dataset</h2>
+				<ul>
+					<li>
+						<select id="dataset">
+							<option selected="selected" value="chicago">Chicago Crime</option>
+						</select>
+					</li>
+					<li><label><input type="checkbox" id="cull-dirty"> Cull dirty data</label></li>
+				</ul>
+
+			</div>
+		</form>
+	</body>
+	
+	<!-- ****** SCRIPT FILES******************************************* -->
+	<script src="d3\d3.js"></script>
+		<script src="d3\d3.csv.js"></script>
+		<script src="datavis-demo.js"></script>
+</html>
